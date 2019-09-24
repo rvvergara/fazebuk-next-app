@@ -4,7 +4,7 @@
   "description": "Facebook clone built using NextJS (with React/Redux)",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 8080",
     "build": "next build",
     "start": "next start",
     "test": "jest --config jest.config.json",
