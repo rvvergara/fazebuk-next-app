@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const sendRequest = async (method, path, data) => {
   const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : process.env.API_URL;
-  const result = await axios[method](`${baseUrl}/${path}`);
+  const result = await axios[method](`${baseUrl}/${path}`, data);
   return result;
 };
 
