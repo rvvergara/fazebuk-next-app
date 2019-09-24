@@ -1,0 +1,48 @@
+{
+  "name": "fazebuk-next-app",
+  "version": "1.0.0",
+  "description": "Facebook clone built using NextJS (with React/Redux)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rvvergara/fazebuk-next-app.git"
+  },
+  "author": "Ryan Vergara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rvvergara/fazebuk-next-app/issues"
+  },
+  "homepage": "https://github.com/rvvergara/fazebuk-next-app#readme",
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.9.0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.0",
+    "js-cookie": "^2.2.1",
+    "jwt-decode": "^2.2.0",
+    "next": "^9.0.6",
+    "next-redirect": "^1.0.1",
+    "next-redux-wrapper": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
+  }
+}
