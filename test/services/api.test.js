@@ -31,4 +31,30 @@ describe('sendRequest async function', () => {
       expect(mockAxios.post).toHaveBeenLastCalledWith(`${baseUrl}/${path}`, data);
     });
   });
+
+  describe('put request', () => {
+    mockAxios.put.mockImplementationOnce((somePath, data) => Promise.resolve({
+      message: 'Put request sent',
+      data,
+    }));
+
+    it('sends updated data to backend API', async () => {
+      const data = { last_name: 'Wilson' };
+      const result = await sendRequest('put', path, data);
+
+      expect(result.data.last_name).toEqual('Wilson');
+      expect(mockAxios.put).toHaveBeenLastCalledWith(`${baseUrl}/${path}`, data);
+    });
+  });
+
+  describe('delete request', () => {
+    mockAxios.delete.mockImplementationOnce(() => Promise.resolve({ message: 'Delete request sent' }));
+
+    it('sends delete request to server', async () => {
+      const request = await sendRequest('delete', path);
+
+      expect(request.message).toEqual('Delete request sent');
+      expect(mockAxios.delete).toHaveBeenLastCalledWith(`${baseUrl}/${path}`, undefined);
+    });
+  });
 });
