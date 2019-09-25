@@ -58,3 +58,23 @@ describe('sendRequest async function', () => {
     });
   });
 });
+
+describe('setAuthorizationToken function', () => {
+  describe('token is present in argument', () => {
+    it('sets Authorization attribute', () => {
+      const token = 'someToken123';
+      setAuthorizationToken(token);
+      expect(mockAxios.defaults.headers.common.Authorization).toEqual(`Bearer ${token}`);
+    });
+  });
+
+  describe('token is missing from argument', () => {
+    it('deletes Authorization attribute', () => {
+      mockAxios.defaults.headers.common.Authorization = 'Bearer someToken';
+
+      setAuthorizationToken();
+
+      expect(mockAxios.defaults.headers.common.Authorization).toEqual(undefined);
+    });
+  });
+});
