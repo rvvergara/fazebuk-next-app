@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "extends": [
     "airbnb"
@@ -24,6 +25,8 @@
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
     "react/jsx-filename-extension": 0,
-    "react/react-in-jsx-scope": 0
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-props-no-spreading": 0,
+    "arrow-parens": 0
   }
 }
