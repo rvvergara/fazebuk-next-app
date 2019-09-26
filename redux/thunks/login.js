@@ -25,7 +25,7 @@ const login = params => async (dispatch) => {
     const user = response.data;
     setupCurrentUser(user, dispatch);
     dispatch(setError(null));
-    return Promise.resolve('Successful login');
+    return user;
   } catch (error) {
     dispatch(setCurrentUser({ authenticated: false, data: null }));
     setupError(error, dispatch);
