@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import login from '../redux/thunks/login';
 
 const LoginForm = ({ login }) => {
@@ -33,6 +34,10 @@ const LoginForm = ({ login }) => {
       </button>
     </form>
   );
+};
+
+LoginForm.propTypes = {
+  login: PropTypes.func.isRequired,
 };
 
 export default connect(null, { login })(LoginForm);
