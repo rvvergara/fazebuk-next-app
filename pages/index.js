@@ -1,6 +1,8 @@
+import LoginForm from '../components/LoginForm';
+
 const Index = () => (
   <div>
-    <h1>Hello</h1>
+    <LoginForm />
   </div>
 );
 
