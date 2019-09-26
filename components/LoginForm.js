@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import login from '../redux/thunks/login';
 
-const LoginForm = () => {
+const LoginForm = ({ login }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log('Logged in');
+    login({ email, password });
     setEmail('');
     setPassword('');
   };
@@ -33,4 +35,4 @@ const LoginForm = () => {
   );
 };
 
-export { LoginForm as default };
+export default connect(null, { login })(LoginForm);
