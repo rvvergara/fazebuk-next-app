@@ -22,10 +22,10 @@ function* setupError(error) {
   }
 }
 
-function* login(params) {
+function* login(action) {
   const path = 'v1/sessions';
   try {
-    const response = yield sendRequest('post', path, params);
+    const response = yield sendRequest('post', path, action.params);
     const user = yield response.data;
     yield call(setUpCurrenUser, user);
     yield put(setError(null));

@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import login from '../redux/thunks/login';
+import { logUser } from '../redux/actions/currentUser';
 
-const LoginForm = ({ login }) => {
+const LoginForm = ({ logUser }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login({ email, password });
+    logUser({ email, password });
     setEmail('');
     setPassword('');
   };
@@ -37,7 +37,7 @@ const LoginForm = ({ login }) => {
 };
 
 LoginForm.propTypes = {
-  login: PropTypes.func.isRequired,
+  logUser: PropTypes.func.isRequired,
 };
 
-export default connect(null, { login })(LoginForm);
+export default connect(null, { logUser })(LoginForm);
